@@ -1,0 +1,22 @@
+{
+  "name": "ui-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilbisht/ui-scripts-weather_shopper.git"
+  },
+  "author": "Nikhil Bisht",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhilbisht/ui-scripts-weather_shopper/issues"
+  },
+  "homepage": "https://github.com/nikhilbisht/ui-scripts-weather_shopper#readme",
+  "devDependencies": {
+    "cypress": "^9.0.0"
+  }
+}
