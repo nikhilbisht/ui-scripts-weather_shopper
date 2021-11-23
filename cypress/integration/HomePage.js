@@ -1,3 +1,5 @@
+var item_name, item_price;
+
 describe("Verify", ()=>{
     before(()=>{
         cy.visit("/")
@@ -27,16 +29,40 @@ describe("Verify", ()=>{
             cy.get('div.justify-content-center').eq(1).children('div').then(()=>{
                 cy.get('div.text-center').within(()=>{
                     cy.get('img').should('be.exist')
-                    // cy.get('p').eq(0).contains('Max honey and almond moisturiser')
-                    // cy.get('p').eq(1).contains('Price: Rs. 220')
+                    cy.get('p').eq(0).invoke('text').then((text)=>{
+                        item_name=text
+                    })
+                    //cy.log(this.text)
+                    
+                    cy.get('p').eq(1).invoke('text').then((text)=>{
+                        item_price=text.substring(11,text.length)
+                        //cy.log(item_price)
+                    })
                     cy.get('button').contains('Add').click()
                 })
             })
-            cy.get('ul.navbar-nav>button').contains('Cart - 1 item(s)').click().then(()=>{
-                cy.get('h2').contains('Checkout')
-            })
+            cy.get('ul.navbar-nav>button').contains('Cart - 1 item(s)').click()
+            
         })
 
 
+    })
+
+    it("Verify the item in Checkout Page",()=>{
+        cy.get('h2').contains('Checkout')
+        cy.get('table').within(()=>{
+            cy.get('thead').children('tr').then(()=>{
+                cy.get('th').eq(0).contains("Item")
+                cy.get('th').eq(1).contains("Price")
+            })
+            cy.get('tbody').children('tr').then(()=>{
+                cy.get('td').eq(0).should('have.text',item_name)
+                cy.get('td').eq(1).should("have.text",item_price)
+            })
+        })
+
+        cy.get('button[type="submit"]>span').should('have.text','Pay with Card').click().then(()=>{
+            
+        })
     })
 })
