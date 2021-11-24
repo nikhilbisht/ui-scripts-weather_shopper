@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --headed --spec 'cypress/integration/*.js' --browser edge"
+    "pretest": "npm run delete:reports",
+    "cy:run": "cypress run --spec 'cypress/integration/*.js' --browser",
+    "merge-report":"npx mochawesome-merge cypress/reports/*.json -o cypress/reports/report.json",
+    "delete:reports": "rimraf cypress/reports/*",
+    "posttest": "npm run merge-report",
+    "test": "npm run cy:run"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,13 @@
   },
   "homepage": "https://github.com/nikhilbisht/ui-scripts-weather_shopper#readme",
   "devDependencies": {
-    "cypress": "^9.0.0"
+    "cypress": "^9.0.0",
+    "cypress-iframe": "^1.0.1",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.0.1"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   }
 }

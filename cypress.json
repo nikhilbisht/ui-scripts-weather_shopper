@@ -1,3 +1,13 @@
 {
-    "baseUrl":"https://weathershopper.pythonanywhere.com/"
+    "baseUrl": "https://weathershopper.pythonanywhere.com/",
+    "projectId": "mf3uww",
+    "chromeWebSecurity": false,
+    "reporter": "mochawesome",
+    "video": false,
+    "reporterOptions": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+    }
 }
