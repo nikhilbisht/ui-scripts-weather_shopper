@@ -1,18 +1,22 @@
 # ui-scripts-weather_shopper
 
-Test-Case:
+### **Test-Case to Automate:**
 1. Add and verify an item in Moisturizer on Checkout Page.
 
-Pre-requisite:
-To install all the dependencies use command : npm install
+### Installation:
+After cloning the project from the repository, make sure to run ``` npm install``` or ```npm i``` to install all the node_modules.
 
-Run tests from command line:
-1. To run tests in chrome browser from command line: npm test --browser chrome
+### Running Tests:
+1. The command to run an individual test from Command Line is:
 
-2. To run tests in edge browser from command line : npm test --browser edge
+    ```npm test --browser chrome```
 
-To run tests from UI:
-1. Open cypress using command :  npx cypress open
-2. Select the tests which you want to run
+    --browser refers to the browser where we want our tests to be executed. To run tests in any other browser, replace chrome with browser name, for eg, if tests to be run for           edge, use command ```npm test --browser edge```
+
+2. To run tests from UI, please follow the below-mentioned steps:
+
+    a. Open cypress using command :  ```npx cypress open```
+    
+    b. Select the tests which you want to run
 
 
