@@ -1,7 +1,6 @@
 # ui-scripts-weather_shopper
 
-### **Test-Case to Automate:**
-1. Add and verify an item in Moisturizer on Checkout Page.
+Note: **Automation Tests are written in cypress.io**
 
 ### Installation:
 After cloning the project from the repository, make sure to run ``` npm install``` or ```npm i``` to install all the node_modules.
